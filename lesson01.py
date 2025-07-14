@@ -81,20 +81,38 @@ print(word_counts)
 my_str = "hello world"
 
 # Print out the third letter of the string (using an index)
+print(my_str[2])
 # Print out the last word of the string using index slicing
+print(my_str[-1])
 
 # Find two string methods besides split from the python documentation
 # and use them on your string
 
+print(my_str.count("l"))
+print(my_str.center(20))
+
+
 # Convert the string to a list and store it in a variable, my_list
 # (Look at the slides for an example)
+
+my_list = my_str.split()
+print(my_list)
 
 # Research two list methods from the python documentation and experiment
 # with their use.  NOTE! Some list methods will give you a new list,
 # but other list methods operate on the current list.
 
+my_list.append("new")
+print(my_list)
+
+my_list.reverse()
+print(my_list)
+
 # Print out the third letter of the list
 # Print out the list in reverse order using index slicing
+print(my_list[2])
+print(my_list[::-1])
+
 
 # Use the dictionary below for the following problems:
 my_dict = {"dogs": 3, "cats": 4, "alpacas": 100}

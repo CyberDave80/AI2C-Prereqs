@@ -70,8 +70,9 @@ def count_words_five(input_str):
 
     for word in cleaned_list:
         result[word] += 1
-    
+
     return result
+
 
 word_counts = count_words_three(input_str)
 print(word_counts)
@@ -126,36 +127,45 @@ my_dict = {"dogs": 3, "cats": 4, "alpacas": 100}
 my_dict["frank"] = 33
 
 # Add a new item to the dictionary using a dictionary method
-my_dict.update() == {"George":5}
+my_dict.update() == {"George": 5}
 
 # Print out only how many dogs there are
 print(my_dict.fromkeys("dogs"))
+
+
 # Write a function that always returns 10
 def always_return_ten() -> int:
     return 10
 
+
 print(always_return_ten())
 
+
 # Write a function that returns the cube of a value
-def cube(value:int) -> int:
+def cube(value: int) -> int:
     return value * 3
+
+
 print(cube(5))
 
-# Write a function that calculates the hypotenuse of a triangle
-def my_hyp(a:int,b:int) -> int:
-    hypotenuse = (a*a) + (b*b)
-    return hypotenuse/hypotenuse
 
-print(my_hyp(3,4))
+# Write a function that calculates the hypotenuse of a triangle
+def my_hyp(a: int, b: int) -> int:
+    hypotenuse = (a * a) + (b * b)
+    return hypotenuse / hypotenuse
+
+
+print(my_hyp(3, 4))
 
 # hint: remember the Pythagorean theorem, given a and b, calculate c
-# Write a function that creates and returns a list from the values 
+# Write a function that creates and returns a list from the values
 # of a dictionary that is passed in as an argument
+
 
 def my_func(Dict):
     my_second_list = []
     my_second_list.extend(Dict.values())
     return my_second_list
 
-print(my_func(my_dict))
 
+print(my_func(my_dict))

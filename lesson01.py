@@ -123,57 +123,39 @@ print(my_list[::-1])
 my_dict = {"dogs": 3, "cats": 4, "alpacas": 100}
 
 # Add a new item to the dictionary using the assignment operator '='
-my_dict["turtles"] = "no way"
+my_dict["frank"] = 33
 
 # Add a new item to the dictionary using a dictionary method
-my_dict.update({'boa constrictors': 2.4})
-print(my_dict)
+my_dict.update() == {"George":5}
 
 # Print out only how many dogs there are
-print(my_dict["dogs"])
-
+print(my_dict.fromkeys("dogs"))
 # Write a function that always returns 10
-def always_10():
+def always_return_ten() -> int:
     return 10
-print(always_10())
+
+print(always_return_ten())
 
 # Write a function that returns the cube of a value
-def cube(val):
-    return val ** 3
-print(cube(3))
+def cube(value:int) -> int:
+    return value * 3
+print(cube(5))
 
 # Write a function that calculates the hypotenuse of a triangle
+def my_hyp(a:int,b:int) -> int:
+    hypotenuse = (a*a) + (b*b)
+    return hypotenuse/hypotenuse
+
+print(my_hyp(3,4))
+
 # hint: remember the Pythagorean theorem, given a and b, calculate c
-def hypotenuse(a, b):
-    return (a ** 2 + b ** 2) ** (1/2)
-print(hypotenuse(3, 4))
-
-import math
-def hypotenuse(a, b):
-    return math.sqrt(math.pow(a, 2) + math.pow(b, 2))
-print(hypotenuse(3, 4))
-
 # Write a function that creates and returns a list from the values 
 # of a dictionary that is passed in as an argument
-def dictionary_function(input_dict):
-    return list(input_dict.values())
 
-def dictionary_function(input_dict):
-    result = []
-    for key in input_dict:
-        result.append(input_dict[key])
-    return result
+def my_func(Dict):
+    my_second_list = []
+    my_second_list.extend(Dict.values())
+    return my_second_list
 
-def dictionary_function(input_dict):
-    result = []
-    for value in input_dict.values():
-        result.append(value)
-    return result
+print(my_func(my_dict))
 
-def dictionary_function(input_dict: dict):
-    result = []
-    for key, value in input_dict.items():
-        result.append(value)
-    return result
-
-print(dictionary_function({'a': 1, 'b': 2, 'c': 3}))

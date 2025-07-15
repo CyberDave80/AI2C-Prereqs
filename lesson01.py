@@ -77,15 +77,11 @@ def count_words_five(input_str):
 word_counts = count_words_three(input_str)
 print(word_counts)
 
-# Optional: clone from github
-# git clone https://github.com/shafe123/AI2C-Prereqs.git
-# online: https://github.com/shafe123/AI2C-Prereqs/blob/main/lesson01.py
 
 # Create and use a string called my_str with any value
 my_str = "hello world"
 
 # Print out the third letter of the string (using an index)
-print(my_str[2])
 print(my_str[2])
 # Print out the last word of the string using index slicing
 print(my_str[-1])
@@ -114,7 +110,6 @@ my_list.reverse()
 print(my_list)
 
 # Print out the third letter of the list
-print(new_list[2])
 # Print out the list in reverse order using index slicing
 print(my_list[2])
 print(my_list[::-1])

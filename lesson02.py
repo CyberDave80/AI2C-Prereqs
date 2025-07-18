@@ -50,7 +50,7 @@ def bitwise(num1,num2):
     result = num1 | num2
     print(result)
 
-print(bitwise(0b110101,0b101010))
+print(bitwise(110101,101010))
 
 # Perform a bitwise 'or' between 53 and 42, what is its binary value
 # Do the same with a bitwise 'and'

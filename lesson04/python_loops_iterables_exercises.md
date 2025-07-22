@@ -40,6 +40,10 @@ These exercises explore key differences between `for` and `while` loops, iterato
 
 **Goal**: Reverse a list using a `while` loop.
 
+```python
+original = [1, 2, 3, 4, 5]
+```
+
 ✅ *Check*: Should output `[5, 4, 3, 2, 1]`.
 
 ---
@@ -48,6 +52,10 @@ These exercises explore key differences between `for` and `while` loops, iterato
 
 **Goal**: Use `iter()` and `next()` to manually iterate through a list.
 
+```python
+words = ["loop", "list", "range"]
+```
+
 ✅ *Check*: All words should be printed in order.
 
 ---
@@ -55,6 +63,10 @@ These exercises explore key differences between `for` and `while` loops, iterato
 ### Exercise 7: Nested Loop with Tuple Unpacking
 
 **Goal**: Iterate over student records with name and grades.
+
+```python
+students = [("Alice", [90, 95]), ("Bob", [85, 88])]
+```
 
 ✅ *Check*: Each student should show their name and grades below.
 
@@ -80,6 +92,10 @@ These exercises explore key differences between `for` and `while` loops, iterato
 
 **Goal**: Print index and value of items in a list.
 
+```python
+colors = ["red", "green", "blue"]
+```
+
 ✅ *Check*: Each color should be labeled with its index.
 
 
@@ -104,6 +120,10 @@ These exercises explore key differences between `for` and `while` loops, iterato
 ### Exercise 13: Set Comprehension
 
 **Goal**: Use a set comprehension to extract unique vowels from a string.
+
+```python
+text = "comprehension in python"
+```
 
 ✅ *Check*: Output should be a set of vowels found in the string.
 

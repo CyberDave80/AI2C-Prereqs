@@ -32,6 +32,6 @@ for key, value in student_dictionary.items():
 
 #Note -- if two people score the same high score, both will be printed because we have a print statement on line 27.  If we added
 #a print statement later (outside of the for loop), you would only see the last person in the for loop who scored the highest.
-#Alternatively, you could initialize and empty list before the for loop, and you could build a max_scorers list to show ties.
+#Alternatively, you could initialize an empty list before the for loop, and you could build a max_scorers list to show ties.
 
 

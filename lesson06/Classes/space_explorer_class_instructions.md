@@ -69,19 +69,23 @@ Keeps track of the player’s progress, including visited planets, credits, fuel
    - Optional: `difficulty`: affects starting credits and spacecraft
 
 2. Track the following attributes:
+   - `current_planet`
    - `distance_traveled`
    - `visited_planets`
    - `score`
    - `credits`
+   - `mission_rewards`
 
 3. Add methods to:
-   - Record visited planets and update distance
+   - Record visited planets and update distance and current planet
    - Buy fuel for the spacecraft using available credits
+   - Calculate the player's score based off distance, credits, and mission rewards
    - Display a status summary
 
 4. Create a method to simulate a mission on the current planet with varying outcomes:
    - Use danger level to calculate success chance
    - Return success, partial, or fail outcomes with appropriate reward values
+   - Optional: limit the number of missions a player can do at a planet
 
 ---
 
@@ -114,4 +118,5 @@ Spacecraft:
 
 ### Other Thoughts
 - How many times can a player do a mission at a single planet?
-- 
+- What's the best way to tune / tweak these values?
+- Implement a config file or data file to dynamically store / load data.

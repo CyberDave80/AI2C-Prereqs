@@ -5,7 +5,7 @@ from player import Player
 import random
 
 
-def choose_difficulty():
+def choose_difficulty() -> str | None:
     while True:
         level = input("Choose difficulty (Easy, Medium, Hard): ").capitalize()
         if level in ["Easy", "Medium", "Hard"]:
@@ -13,7 +13,7 @@ def choose_difficulty():
         print("Invalid choice. Please enter Easy, Medium, or Hard.")
 
 
-def setup_spacecraft(difficulty):
+def setup_spacecraft(difficulty: str) -> Spacecraft:
     if difficulty == "Easy":
         return Spacecraft("Apollo 11", 600, 2.5)
     elif difficulty == "Medium":
@@ -22,7 +22,7 @@ def setup_spacecraft(difficulty):
         return Spacecraft("Vostok 1", 250, 1.5)
 
 
-def create_planets():
+def create_planets() -> list[Planet]:
     return [
         Planet("Earth", (149.6, 0.0, 0.0), 0, 0, "Earth-like"),
         Planet("Mars", (227.9,   0.0,    1.0), 1, 20, "Thin"),
@@ -37,14 +37,16 @@ def create_planets():
     ]
 
 
-def clear_screen():
+def clear_screen() -> None:
     os.system('cls' if os.name == 'nt' else 'clear')
 
 
 def main():
     print("=== Welcome to the Space Explorer Game ===")
     player_name = input("Enter your name, Captain: ")
-    difficulty = choose_difficulty()
+    difficulty = ""
+    while not difficulty:
+        difficulty = choose_difficulty()
     all_planets = create_planets()
 
     spacecraft = setup_spacecraft(difficulty)

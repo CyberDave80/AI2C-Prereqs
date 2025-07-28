@@ -1,3 +1,4 @@
+# classes
 class MyClass():
     my_name = 'Milo'
 
@@ -36,7 +37,29 @@ charlie = Animal()
 Animal.how_many_animals()
 print(Animal.num_instances)
 
+# polymorphism
+print(3)
+print('5')
 
+class Pet():
+    def __init__(self, pet_name, owner_name):
+        self.name = pet_name
+        self.owner = owner_name
+
+    def meow(self):
+        print(f'{self.name} meows')
+    
+    def __str__(self) -> str:
+        return f"{self.name}'s owner is {self.owner}"
+    
+    def __repr__(self) -> str:
+        return f"Pet('{self.name}', '{self.owner}')"
+    
+my_pet = Pet('Milo', 'Ethan')
+print(my_pet)
+print(repr(my_pet))
+
+# inheritance
 class Vehicle():
     def __init__(self) -> None:
         self.num_wheels = 4

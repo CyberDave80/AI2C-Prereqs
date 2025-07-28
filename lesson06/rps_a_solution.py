@@ -7,7 +7,7 @@ import random
 # "B" level solution
 print("Let's play a game!")
 game_max = 0
-while game_max % 2 == 0:
+while game_max % 2 == 0 or game_max < 1 or game_max > 9:
     try:
         print("Can only enter odd games to be able to determine a winner!")
         user_input = input("How many times would you like to play? (q to quit) ")

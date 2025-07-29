@@ -1,6 +1,5 @@
 import random
 
-
 class Planet:
     def __init__(
         self,
@@ -12,8 +11,6 @@ class Planet:
     ):
         # assign the arguments as instance variables (use self.whatever)
         # Maximum missions allowed: fewer for higher danger
-        self.max_missions = max(1, 4 - int(self.danger))
-        self.missions_done: dict[str, int] = {}
 
     def __str__(self) -> str:
         # when you print out a planet object, what do you want it to look like?

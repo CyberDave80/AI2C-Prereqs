@@ -1,7 +1,7 @@
 import os
-from solution_spacecraft import Spacecraft
-from solution_planet import Planet
-from solution_player import Player
+from scaffold_spacecraft import Spacecraft
+from scaffold_planet import Planet
+from scaffold_player import Player
 import random
 
 

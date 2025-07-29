@@ -1,5 +1,5 @@
-from solution_planet import Planet
-from solution_spacecraft import Spacecraft
+from scaffold_planet import Planet
+from scaffold_spacecraft import Spacecraft
 
 
 class Player:

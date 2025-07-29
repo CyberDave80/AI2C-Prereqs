@@ -1,7 +1,7 @@
 import os
-from spacecraft import Spacecraft
-from planet import Planet
-from player import Player
+from solution_spacecraft import Spacecraft
+from solution_planet import Planet
+from solution_player import Player
 import random
 
 

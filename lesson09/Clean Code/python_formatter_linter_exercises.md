@@ -4,11 +4,26 @@ These exercises will help you learn to automatically format Python code using to
 
 ---
 
+## Hands-On #1
+
+### Exercise 0:
+
+1. Clone the following repository:  https://github.com/shafe123/AI2C-python-formatting.git
+
+1. Open the new repository as a folder in VS Code.
+
+1. Install prerequisites via the terminal. (Optional, setup a virtual environment beforehand)
+```bash
+pip install black flake8 pylint pre-commit
+```
+
 ### Exercise 1: Format Code with `black`
 
 **Goal**: Use `black` to autoformat an unformatted Python script.
 
-1. Create a file named `messy.py` with the following content:
+1. Install black by running the following command.
+
+2. Look at the file called `messy.py`, it should resemble the following:
 
 ```python
 def greet(name): print("Hello,"+name)
@@ -23,11 +38,15 @@ black messy.py
 
 ✅ *Check*: The file should now be properly formatted with consistent indentation and spacing.
 
+🎯 *Extra*:  config VS Code to use black as its autoformatter on python files.
+
 ---
 
 ### Exercise 2: Format an Entire Directory
 
 **Goal**: Use `black` to format all `.py` files in a project.
+
+1. Inspect the remaining files and observe how they change after running black.
 
 ```bash
 black .
@@ -41,24 +60,9 @@ black .
 
 **Goal**: Use `flake8` to identify potential issues in a Python file.
 
-1. Install `flake8` (if not already):
+1. Check the contents of `bad_style.py` before running the tool.
 
-```bash
-pip install flake8
-```
-
-2. Create a file `bad_style.py`:
-
-```python
-import os,sys
-
-def unused_function():
-    pass
-
-print(   "hi")
-```
-
-3. Run `flake8`:
+1. Run `flake8`:
 
 ```bash
 flake8 bad_style.py
@@ -66,33 +70,15 @@ flake8 bad_style.py
 
 ✅ *Check*: Output should list issues such as unused imports, extra spaces, and unused functions.
 
----
-
-### Exercise 4: Lint with `pylint`
-
-**Goal**: Use `pylint` to get more detailed feedback.
-
-1. Install `pylint`:
-
-```bash
-pip install pylint
-```
-
-2. Run it on `bad_style.py`:
-
-```bash
-pylint bad_style.py
-```
-
-✅ *Check*: You'll receive a score and detailed output for code quality, style, and possible bugs.
+🎯 *Extra*:  Run flake8 on the whole directory.
 
 ---
 
-### Exercise 5: Configure `flake8` with a Config File
+### Exercise 4: Configure `flake8` with a Config File
 
 **Goal**: Customize `flake8` using a configuration file.
 
-1. Create a `.flake8` file:
+1. Create a `.flake8` file in the repository's root directory, this particular config makes it compatible with black:
 
 ```
 [flake8]
@@ -106,7 +92,23 @@ extend-ignore = E203, W503
 flake8 bad_style.py
 ```
 
-✅ *Check*: Some warnings will now be ignored or relaxed according to the config.
+✅ *Check*: You should not see the line-length warning anymore.
+
+---
+
+### Exercise 5: Lint with `pylint`
+
+**Goal**: Use `pylint` to get more detailed feedback.
+
+1. Run it on `bad_style.py`:
+
+```bash
+pylint bad_style.py
+```
+
+✅ *Check*: You'll receive a score and detailed output for code quality, style, and possible bugs.
+
+🎯 *Extra*:  Run pylint on the whole directory
 
 ---
 
@@ -114,20 +116,12 @@ flake8 bad_style.py
 
 **Goal**: Set up autoformatting and linting with `pre-commit`.
 
-*Note*: you will need to be in a repository for this to work properly.  You can start a repo with `git init` or put this in an existing repository.
-
-1. Install the tool:
-
-```bash
-pip install pre-commit
-```
-
-2. Create a `.pre-commit-config.yaml`:
+1. Create a `.pre-commit-config.yaml`:
 
 ```yaml
 repos:
   - repo: https://github.com/psf/black
-    rev: stable
+    rev: 25.1.0
     hooks:
       - id: black
   - repo: https://github.com/pycqa/flake8
@@ -136,14 +130,24 @@ repos:
       - id: flake8
 ```
 
-3. Install hooks:
+2. Install and run hooks, note the output of the command:
 
 ```bash
 pre-commit install
 pre-commit run --all-files
 ```
 
+3. Run the hooks again, did the output change?
+
+```bash
+pre-commit run --all-files
+```
+
 ✅ *Check*: Try committing and ensure that the files are formatted and checked before committing.
+
+🤚 *Hint*: You can use `git restore *` to change all the files back to the original version that you pulled.
+
+🎯 *Extra*:  Fix the errors and try committing again.
 
 ---
 
@@ -156,32 +160,32 @@ pre-commit run --all-files
 ```yaml
 repos:
   - repo: https://github.com/psf/black
-    rev: stable
+    rev: 25.1.0
     hooks:
       - id: black
   - repo: https://github.com/pycqa/flake8
-    rev: 6.1.0
+    rev: 7.3.0
     hooks:
       - id: flake8
   - repo: https://github.com/PyCQA/isort
-    rev: 5.13.2
+    rev: 6.0.1
     hooks:
       - id: isort
   - repo: https://github.com/PyCQA/docformatter
-    rev: 1.7.5
+    rev: v1.7.6
     hooks:
       - id: docformatter
-        args: ["--in-place", "--recursive", "."]
+        args: ["--black", "--in-place", "--recursive", "."]
   - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: v1.10.0
+    rev: v1.17.0
     hooks:
       - id: mypy
   - repo: https://github.com/PyCQA/bandit
-    rev: 1.7.7
+    rev: 1.8.6
     hooks:
       - id: bandit
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.5.0
+    rev: v5.0.0
     hooks:
       - id: trailing-whitespace
       - id: end-of-file-fixer
@@ -189,7 +193,7 @@ repos:
       - id: check-json
       - id: check-added-large-files
   - repo: https://github.com/codespell-project/codespell
-    rev: v2.2.6
+    rev: v2.4.1
     hooks:
       - id: codespell
 ```
@@ -201,4 +205,4 @@ pre-commit install
 pre-commit run --all-files
 ```
 
-✅ *Check*: Try committing again. Now, in addition to formatting and linting, your code will be checked for types, security issues, spelling, trailing whitespace, file
+✅ *Check*: Try committing again. Now, in addition to formatting and linting, your code will be checked for types, security issues, spelling, trailing whitespace, and more.

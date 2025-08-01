@@ -5,3 +5,5 @@ lesson04/practice.py
 lesson06/File IO/practice_06.py
 lesson06/File IO/renamed_example.txt
 lesson06/File IO/temp.txt
+_notebook.ipynb
+__pycache__

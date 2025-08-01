@@ -18,3 +18,7 @@ class Spacecraft:
     def launch(self, distance: float) -> None:
         # handle a launch happening
         pass
+
+
+if __name__ == "__main__":
+    # run your tests here...

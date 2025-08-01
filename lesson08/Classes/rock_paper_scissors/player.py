@@ -61,10 +61,22 @@ class HumanPlayer(Player):
 
 if __name__ == "__main__":
     player = HumanPlayer()
-    throw = player.get_throw()
-    if throw is None:
+    player_throw = player.get_throw()
+    if player_throw is None:
         print("Try typing better, fool")
         exit()
 
-    print(f"{player} threw a {throw}")
-    print(f"{throw} {throw < Throw.Scissors} against scissors")
+    computer = ComputerPlayer()
+    computer_throw = computer.get_throw()
+    
+    print(f"Player's {player_throw} {player_throw < computer_throw} against Computer's {computer_throw}")
+
+    if player_throw < computer_throw == "loss":
+        player.record_win()
+        computer.record_loss()
+    elif player_throw == computer_throw:
+        player.record_tie()
+        computer.record_tie()
+    else:
+        player.record_loss()
+        computer.record_win()

@@ -45,6 +45,8 @@ git push -u origin main
 
 ✅ *Check*: Visit the GitHub repo and confirm your code appears.
 
+🎯 What does the `-u` flag mean?
+
 ---
 
 ### Exercise 3: Pull Changes from a Remote
@@ -76,7 +78,7 @@ git pull origin main
 
 **Goal**: Create your own copy of someone else's GitHub repository.
 
-1. Go to a public GitHub repository (e.g., https://github.com/octocat/Spoon-Knife).
+1. Go to a public GitHub repository (e.g., https://github.com/shafe123/Spoon-Knife).
 2. Click the **Fork** button on the top right.
 
 ✅ *Check*: You should now have a copy under your own GitHub account.
@@ -100,10 +102,11 @@ cd Spoon-Knife
 
 **Goal**: Make a change and push it to your GitHub fork.
 
+Example:
 ```bash
-echo "My contribution!" >> README.md
-git add README.md
-git commit -m "Add personal message"
+echo "This is my name!" >> {my name}.md
+git add {my name}.md
+git commit -m "Added a file from me"
 git push origin main
 ```
 
@@ -128,9 +131,11 @@ git push origin main
 **Goal**: Keep your fork in sync with the original repository.
 
 ```bash
-git remote add upstream https://github.com/Octocat/Spoon-Knife.git
+git remote add upstream https://github.com/shafe123/Spoon-Knife.git
 git fetch upstream
 git merge upstream/main
 ```
 
 ✅ *Check*: You can now pull updates from the original repo into your fork.
+
+🎯 What command does fetch and merge in one?

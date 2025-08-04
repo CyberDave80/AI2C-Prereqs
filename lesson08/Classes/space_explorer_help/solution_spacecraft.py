@@ -19,3 +19,17 @@ class Spacecraft:
             print(f"{self.name} has successfully traveled {distance} units!")
         else:
             print(f"{self.name} does not have enough fuel to travel {distance} units.")
+
+if __name__ == "__main__":
+    test_craft = Spacecraft("Testing", 1000, 0.50)  # new spacecraft
+    print(test_craft.calculate_required_fuel(100))  # should be 200
+    print(test_craft.check_fuel(1000))              # should be false
+    test_craft.launch(500)                          # should work
+    print(test_craft.fuel_level)                    # should be 0
+
+if __name__ == "__main__":
+    test_craft = Spacecraft("Testing", 1000, 0.50)  # new spacecraft
+    print(test_craft.calculate_required_fuel(100))  # should be 200
+    print(test_craft.check_fuel(1000))              # should be false
+    test_craft.launch(500)                          # should work
+    print(test_craft.fuel_level)                    # should be 0

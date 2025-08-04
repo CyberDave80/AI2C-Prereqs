@@ -21,10 +21,6 @@ class Player:
     def record_tie(self):
         self.ties += 1
 
-    def __lt__(self, other):
-        # compare players against each other
-        pass
-
 
 class ComputerPlayer(Player):
     def __init__(self) -> None:
@@ -60,23 +56,43 @@ class HumanPlayer(Player):
 
 
 if __name__ == "__main__":
+    # simple example
     player = HumanPlayer()
     player_throw = player.get_throw()
     if player_throw is None:
         print("Try typing better, fool")
         exit()
 
-    computer = ComputerPlayer()
-    computer_throw = computer.get_throw()
-    
-    print(f"Player's {player_throw} {player_throw < computer_throw} against Computer's {computer_throw}")
+    print(f"Player's {player_throw} {player_throw < Throw.Scissors} against Scissors")
 
-    if player_throw < computer_throw == "loss":
-        player.record_win()
-        computer.record_loss()
-    elif player_throw == computer_throw:
-        player.record_tie()
-        computer.record_tie()
-    else:
-        player.record_loss()
-        computer.record_win()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    # little more complicated...
+    # computer = ComputerPlayer()
+    # computer_throw = computer.get_throw()
+    
+    # print(f"Player's {player_throw} {player_throw < computer_throw} against Computer's {computer_throw}")
+
+    # if player_throw < computer_throw == "loss":
+    #     player.record_win()
+    #     computer.record_loss()
+    # elif player_throw == computer_throw:
+    #     player.record_tie()
+    #     computer.record_tie()
+    # else:
+    #     player.record_loss()
+    #     computer.record_win()

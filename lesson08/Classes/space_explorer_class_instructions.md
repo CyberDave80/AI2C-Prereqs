@@ -48,7 +48,7 @@ Represents each planet in the game, including mission difficulty and reward pote
 1. Define a class `Planet` with an initializer that sets:
    - `name`: planet’s name
    - `coordinates`: the x, y, z coordinates of the planet
-   - `danger`: difficulty of completing missions
+   - `danger`: difficulty of completing missions  
    - `resources`: reward value
    - `atmosphere`: descriptive text
 

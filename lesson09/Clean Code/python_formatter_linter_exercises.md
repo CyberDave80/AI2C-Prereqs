@@ -92,6 +92,8 @@ extend-ignore = E203, W503
 flake8 bad_style.py
 ```
 
+For more details read https://black.readthedocs.io/en/stable/guides/using_black_with_other_tools.html
+
 ✅ *Check*: You should not see the line-length warning anymore.
 
 ---
@@ -114,7 +116,7 @@ pylint bad_style.py
 
 ### Exercise 6: Format and Lint as a Pre-Commit Hook
 
-**Goal**: Set up autoformatting and linting with `pre-commit`.
+**Goal**: Set up autoformatting and linting with `pre-commit` hooks.
 
 1. Create a `.pre-commit-config.yaml`:
 

@@ -1,5 +1,5 @@
 import random
-
+from solution_spacecraft import Spacecraft
 
 class Planet:
     def __init__(
@@ -26,7 +26,7 @@ class Planet:
         )
 
     def __sub__(self, other) -> float:
-        diff = tuple(x - y for x, y in zip(self.coordinates, other.coordinates))
+        diff = tuple(coord_1 - coord_2 for coord_1, coord_2 in zip(self.coordinates, other.coordinates))
         return (diff[0] ** 2 + diff[1] ** 2 + diff[2] ** 2) ** 0.5
 
     def can_do_mission(self, player_name: str) -> bool:
@@ -44,3 +44,13 @@ class Planet:
             return "partial", self.resources // 2
         else:
             return "fail", 0
+
+
+if __name__ == "__main__":
+    test_planet = Planet("Test World", (1, 2, 3), 5, 100, "A spooky world in the orbit of Nimbus I")
+    second_planet = Planet("Second World", (3, 4, 5), 4, 200, "A not so spooky world in the orbit of Nimbus I")
+    print(test_planet)
+    print(test_planet - second_planet)
+    
+    test_craft = Spacecraft("Testing", 1000, 0.50)  # new spacecraft
+    print(test_craft.calculate_required_fuel(test_planet - second_planet))  # should be 200

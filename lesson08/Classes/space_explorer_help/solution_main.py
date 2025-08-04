@@ -90,6 +90,7 @@ def main():
             if not spacecraft.check_fuel(distance):
                 print("Not enough fuel to travel. Try buying more.")
                 input("Press Enter to continue...")
+                visible_planets.insert(choice, destination)
             else:
                 spacecraft.launch(distance)
                 player.visit_planet(destination)

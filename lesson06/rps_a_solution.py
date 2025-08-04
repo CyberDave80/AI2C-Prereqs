@@ -4,7 +4,7 @@
 # validate input
 import random
 
-# "B" level solution
+# "A" level solution
 print("Let's play a game!")
 game_max = 0
 while game_max % 2 == 0 or game_max < 1 or game_max > 9:

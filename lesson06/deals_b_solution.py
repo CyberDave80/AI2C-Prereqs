@@ -3,7 +3,7 @@ import math
 def calculate_area(diameter: float) -> float:
     return (diameter / 2) ** 2 * math.pi
 
-def price_per_area(price: float, diameters: list[float]) -> float:
+def price_per_area(price, diameters):
     total_area = sum([calculate_area(diameter) for diameter in diameters])
     return price / total_area
 

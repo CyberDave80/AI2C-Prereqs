@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Space Explorer</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background: #001122; color: white; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .header { text-align: center; color: #00ccff; margin-bottom: 30px; }
+        .info-panel { background: #003366; padding: 15px; border-radius: 8px; margin-bottom: 20px; }
+        .section { background: #002244; padding: 15px; margin: 10px 0; border-radius: 8px; }
+        .button { background: #0066cc; color: white; padding: 10px 15px; border: none; border-radius: 5px; cursor: pointer; margin: 5px; }
+        .button:hover { background: #0088ff; }
+        input, select { padding: 8px; margin: 5px; border-radius: 4px; border: 1px solid #666; }
+        .planet-list { background: #001133; padding: 10px; border-radius: 5px; }
+        .flash { background: #006600; padding: 10px; border-radius: 5px; margin: 10px 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="header">🚀 Space Explorer</h1>
+        
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="flash">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        
+        <div class="info-panel">
+            <h3>Player Status</h3>
+            <p><strong>Name:</strong> {{ player.name }}</p>
+            <p><strong>Credits:</strong> {{ player.credits }}</p>
+            <p><strong>Spacecraft:</strong> {{ spacecraft.name }}</p>
+            <p><strong>Fuel Level:</strong> {{ spacecraft.fuel_level }}</p>
+        </div>
+        
+        <div class="section">
+            <h3>Add Fuel</h3>
+            <form method="POST" action="/add_fuel">
+                <input type="number" name="fuel_amount" placeholder="Fuel amount" required>
+                <button type="submit" class="button">Add Fuel</button>
+            </form>
+        </div>
+        
+        <div class="section">
+            <h3>Add Planet</h3>
+            <form method="POST" action="/add_planet">
+                <input type="text" name="name" placeholder="Planet name" required><br>
+                <input type="text" name="coordinates" placeholder="Coordinates (x,y,z)" required><br>
+                <input type="number" name="danger" placeholder="Danger level" required><br>
+                <input type="number" name="resources" placeholder="Resources" required><br>
+                <input type="text" name="atmosphere" placeholder="Atmosphere" required><br>
+                <button type="submit" class="button">Add Planet</button>
+            </form>
+        </div>
+        
+        <div class="section">
+            <h3>Available Planets</h3>
+            <div class="planet-list">
+                {% if player.planets %}
+                    {% for planet in player.planets %}
+                        <p>🪐 {{ planet.name }} at {{ planet.coordinates }} - {{ planet.atmosphere }}</p>
+                    {% endfor %}
+                {% else %}
+                    <p>No planets available. Add some planets first!</p>
+                {% endif %}
+            </div>
+        </div>
+        
+        <div class="section">
+            <h3>Launch Mission</h3>
+            {% if player.planets %}
+                <form method="POST" action="/launch_mission">
+                    <select name="planet" required>
+                        <option value="">Select a planet</option>
+                        {% for planet in player.planets %}
+                            <option value="{{ planet.name }}">{{ planet.name }}</option>
+                        {% endfor %}
+                    </select>
+                    <button type="submit" class="button">🚀 Launch Mission</button>
+                </form>
+            {% else %}
+                <p>Add planets before launching missions!</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

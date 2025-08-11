@@ -120,23 +120,23 @@ def pizza_efficiency_app():
         else:
             st.write(f"Most efficient pizza so far is **{st.session_state.most_efficient_shape}** with efficiency {st.session_state.most_efficient_pizza:.4f}")
 
-empty_list = []
+# empty_list = []
 
 
-def fuel_required(mass:int) -> int:
-    requirement =  math.floor((mass / 3)) - 2
-    return requirement
+# def fuel_required(mass:int) -> int:
+#     requirement =  math.floor((mass / 3)) - 2
+#     return requirement
 
 
-with open("https://raw.githubusercontent.com/CyberDave80/AI2C-Prereqs/main/lesson11/input.txt", "r") as file:
-    for line in file:
-        num_line = int(line)
-        fuel_required(num_line)
-        empty_list.append(num_line)
+# # with open("./input.txt", "r") as file:
+# #     for line in file:
+# #         num_line = int(line)
+# #         fuel_required(num_line)
+# #         empty_list.append(num_line)
 
-total = sum(empty_list)
+# total = sum(empty_list)
 
-print(total)
+# print(total)
 
 st.title("Multi-App Example")
 
@@ -150,8 +150,8 @@ if st.button("Conversion Button"):
 if st.button("Pizza Button"):
     st.session_state.page = "pizza"
 
-if st.button("Fuel Button"):
-    st.session_state.page = "fuel"
+# if st.button("Fuel Button"):
+#     st.session_state.page = "fuel"
 
 # Render content based on selected page
 if st.session_state.page == "conversion":

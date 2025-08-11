@@ -138,7 +138,7 @@ def pizza_efficiency_app():
 
 # print(total)
 
-st.title("Multi-App Example")
+st.title("Multi-App")
 
 if "page" not in st.session_state:
     st.session_state.page = None

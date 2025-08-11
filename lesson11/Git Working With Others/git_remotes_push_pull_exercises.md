@@ -47,6 +47,16 @@ git push -u origin main
 
 🎯 What does the `-u` flag mean?
 
+Note:  You may be prompted to login.  If you are, follow these steps to generate an access token for your device.
+
+1. Go to User settings > Developer Settings > Personal Access Tokens > Fine-grained tokens > Generate new token
+2. Name the token
+3. Set an expiration date for the access token.  (Or set it to none if you are using a personal device)
+4. Select All Repositories
+5. Add Permissions > Contents. Change contents to Read and Write.  Generate the token
+
+Before closing the screen, copy the token, and use it as your password!
+
 ---
 
 ### Exercise 3: Pull Changes from a Remote

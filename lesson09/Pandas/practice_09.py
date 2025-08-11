@@ -30,7 +30,7 @@ import pandas as pd
 # print("NumPy averages (highs and lows):")
 # print(np.mean(data, axis=0))  # axis=0 for column averages
 
-# df = pd.read_csv("/Users/david/Documents/GitHub/Ai2C/AI2C-Prereqs/lesson09/pandas/all_olympic_medalists.csv")
+df = pd.read_csv("/Users/david/Documents/GitHub/Ai2C/AI2C-Prereqs/lesson09/pandas/all_olympic_medalists.csv")
 
 #1. First five last five rows
 # print("First five rows:")
@@ -50,17 +50,17 @@ import pandas as pd
 # #5
  
 # #6 How many medals by the US
-# print(df[df['medals'] == 'United States']['medal'].count())
+print(df[df['country'] == 'United States']['medal'].count())
 
 #Exercise 3
-df = pd.read_csv("/Users/david/Documents/GitHub/Ai2C/AI2C-Prereqs/lesson09/pandas/top-20-womens-tours.csv")
+# df = pd.read_csv("/Users/david/Documents/GitHub/Ai2C/AI2C-Prereqs/lesson09/pandas/top-20-womens-tours.csv")
 
-rank = df["Rank"]
-peak = df["Peak"]
-artist = df["Artist"]
-tour = df["Tour title"]
+# rank = df["Rank"]
+# peak = df["Peak"]
+# artist = df["Artist"]
+# tour = df["Tour title"]
 
-#Shows rows and coloumns
-print(df["Artist"].shape)
+# #Shows rows and coloumns
+# print(df["Artist"].shape)
 
-print(df["Artist","Peak"].shape)
+# print(df["Artist","Peak"].shape)

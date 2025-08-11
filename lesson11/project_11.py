@@ -128,7 +128,7 @@ def fuel_required(mass:int) -> int:
     return requirement
 
 
-with open("./input.txt", "r") as file:
+with open("https://raw.githubusercontent.com/CyberDave80/AI2C-Prereqs/main/lesson11/input.txt", "r") as file:
     for line in file:
         num_line = int(line)
         fuel_required(num_line)
